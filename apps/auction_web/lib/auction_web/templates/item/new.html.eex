@@ -1,0 +1,2 @@
+<h1>New Item</h1>
+<%= render "form.html", item: @item, action: AuctionWeb.Router.Helpers.item_path(@conn,:create) %>
