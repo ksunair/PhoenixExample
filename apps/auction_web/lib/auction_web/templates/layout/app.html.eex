@@ -20,6 +20,13 @@
         </a>
       </section>
     </header>
+    <%= link "Items", to: AuctionWeb.Router.Helpers.item_path(@conn, :index) %>
+    |
+    <%= if @current_user do %>  
+      Logged in as <%= link @current_user.username, to: AuctionWeb.Router.Helpers.user_path(@conn, :show, @current_user) %>  
+      |  <%= link "Log out", to: AuctionWeb.Router.Helpers.session_path(@conn, :delete), method: :delete %> 
+      <% else %>  <%= link "login", to: AuctionWeb.Router.Helpers.session_path(@conn, :new) %>
+      <% end %>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
