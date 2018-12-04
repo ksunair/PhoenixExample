@@ -21,7 +21,10 @@ defmodule AuctionWeb.SessionController do
 
  
     
-    def delete(conn, _params) do    
-        # we'll implement this later in the chapter  
-    end 
+        def delete(conn, _params) do    
+            conn    
+            |> clear_session()    
+            |> configure_session(drop: true)         
+            |> redirect(to: AuctionWeb.Route.Helpers.item_path(conn, :index))  
+        end
 end
