@@ -46,6 +46,14 @@ defmodule Auction do
     |> @repo.insert  
   end
 
+  
+  def get_item_with_bids(id) do
+    id
+    |> get_item()
+    |> @repo.preload(bids: [:user])
+  end
+
+
   def get_user_by_username_and_password(username, password) do    
     with user when not is_nil(user) <- @repo.get_by(User,%{username: username}),         
       true <- Password.verify_with_hash(password,user.hashed_password) do      
@@ -55,6 +63,6 @@ defmodule Auction do
       end  
     end 
 
-    def new_bid, do: Bid.changeset(%Bid{})
+  def new_bid, do: Bid.changeset(%Bid{})
 
 end

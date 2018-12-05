@@ -25,6 +25,6 @@ defmodule AuctionWeb.SessionController do
             conn    
             |> clear_session()    
             |> configure_session(drop: true)         
-            |> redirect(to: AuctionWeb.Route.Helpers.item_path(conn, :index))  
+            |> redirect(to: AuctionWeb.Router.Helpers.item_path(conn, :index))  
         end
 end
