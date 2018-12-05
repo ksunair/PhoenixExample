@@ -1,6 +1,5 @@
 defmodule AuctionWeb.ItemController do
     use AuctionWeb, :controller 
-    alias AuctionWeb.Router.Helpers, as: Routes  
     
     def index(conn, _params) do                                  
         items = Auction.list_items()    
@@ -33,7 +32,7 @@ defmodule AuctionWeb.ItemController do
     def update(conn, %{"id" => id, "item" => item_params}) do    
         item = Auction.get_item(id)    
         case Auction.update_item(item, item_params) do      
-            {:ok, item} -> redirect conn, to: AuctionWeb.Router.Helpers.item_path(conn, :show,item)      
+            {:ok, item} -> redirect conn, to: Routes.item_path(conn, :show,item)      
             {:error, item} -> render conn, "edit.html", item: item    
         end 
     end
