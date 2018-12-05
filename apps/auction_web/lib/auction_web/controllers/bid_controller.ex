@@ -1,7 +1,6 @@
 defmodule AuctionWeb.BidController do
     use AuctionWeb, :controller
     plug :require_logged_in_user
-    alias AuctionWeb.Router.Helpers, as: Routes 
 
     def create(conn, %{"bid" => %{"amount" => amount}, "item_id" => item_id}) do
         user_id = conn.assigns.current_user.id

@@ -11,7 +11,7 @@ defmodule AuctionWeb.SessionController do
                 conn        
                 |> put_session(:user_id, user.id)                  
                 |> put_flash(:info, "Successfully logged in")        
-                |> redirect(to: AuctionWeb.Router.Helpers.user_path(conn, :show, user))      
+                |> redirect(to: Routes.user_path(conn, :show, user))      
                 _ ->                                         
                     conn        
                     |> put_flash(:error, "That username and passwordcombination cannot be found")        
@@ -25,6 +25,6 @@ defmodule AuctionWeb.SessionController do
             conn    
             |> clear_session()    
             |> configure_session(drop: true)         
-            |> redirect(to: AuctionWeb.Router.Helpers.item_path(conn, :index))  
+            |> redirect(to: Routes.item_path(conn, :index))  
         end
 end

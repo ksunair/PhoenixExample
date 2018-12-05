@@ -1,5 +1,5 @@
 <h1>Log In</h1>
-<%= form_for @conn, AuctionWeb.Router.Helpers.session_path(@conn, :create), [as: :user], fn f -> %>
+<%= form_for @conn, Routes.session_path(@conn, :create), [as: :user], fn f -> %>
         <div class="form-group">    
             <%= label f, :username, class: "control-label" %>    
             <%= text_input f, :username, class: "form-control" %>  
