@@ -26,10 +26,10 @@ defmodule AuctionWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AuctionWeb.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Auction.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(AuctionWeb.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Auction.Repo, {:shared, self()})
     end
 
     :ok
