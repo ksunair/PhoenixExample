@@ -82,7 +82,7 @@
               {env,[{stacktrace_depth,nil},
                     {template_engines,[]},
                     {format_encoders,[]},
-                    {filter_parameters,[<<***REMOVED***>>]},
+                    {filter_parameters,[<<"password">>]},
                     {serve_endpoints,false},
                     {gzippable_exts,[<<".js">>,<<".css">>,<<".txt">>,
                                      <<".text">>,<<".html">>,<<".json">>,
