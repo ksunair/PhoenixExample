@@ -16,9 +16,11 @@
     mix do deps.get
 8. Create database and tables
     mix do ecto.create, mix ecto.migrate
-9. Go to auction_web folder and start the server
+9. Go to auction_web/assets
+    run 'npm install' <- without it you will not see images and scripts run
+10. Go to auction_web folder and start the server
     mix phx.server
-10. Open browser and go to
+11. Open browser and go to
     http://localhost:4000/api/items
 
 
